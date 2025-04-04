@@ -14,8 +14,12 @@ variable "common_tags" {
     }
 }
 
-variable "bastion_tags" {
+variable "rds_tags" {
     default = {
-        Component = "bastion"
+        component = "mysql"
     }
+}
+
+variable "zone_name" {
+    default = "kalpanadevops.online"
 }
