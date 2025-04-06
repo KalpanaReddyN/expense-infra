@@ -1,5 +1,5 @@
 resource "aws_ecr_repository" "backend" {
-  name                 = "expense/backend"
+  name                 = "expense/dev/backend"
   image_tag_mutability = "MUTABLE" # Options are MUTABLE or IMMUTABLE
   
   image_scanning_configuration {
@@ -8,7 +8,7 @@ resource "aws_ecr_repository" "backend" {
 }
 
 resource "aws_ecr_repository" "frontend" {
-  name                 = "expense/frontend"
+  name                 = "expense/dev/frontend"
   image_tag_mutability = "MUTABLE" # Options are MUTABLE or IMMUTABLE
 
   image_scanning_configuration {
