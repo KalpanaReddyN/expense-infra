@@ -55,7 +55,7 @@ aws configure
 ```
 
 ```
-aws eks update-kubeconfig --region us-east-1 --name expense-dev
+aws eks update-kubeconfig --region us-east-1 --name expense-deve
 ```
 
 ```
@@ -82,7 +82,7 @@ aws iam create-policy \
 * Create Service account. Replace your account ID.
 ```
 eksctl create iamserviceaccount \
---cluster=expense-dev \
+--cluster=expense-deve \
 --namespace=kube-system \
 --name=aws-load-balancer-controller \
 --attach-policy-arn=arn:aws:iam::211125410910:policy/AWSLoadBalancerControllerIAMPolicy \
@@ -98,7 +98,7 @@ helm repo add eks https://aws.github.io/eks-charts
 ```
 
 ```
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=expense-dev --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system --set clusterName=expense-deve --set serviceAccount.create=false --set serviceAccount.name=aws-load-balancer-controller
 ```
 
 * Make sure load balancer pods are running
